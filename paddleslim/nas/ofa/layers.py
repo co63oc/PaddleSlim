@@ -910,11 +910,11 @@ class SuperBatchNorm2D(paddle.nn.BatchNorm2D):
         momentum(float, optional): The value used for the moving_mean and moving_var computation. Default: 0.9.
         weight_attr(ParamAttr|bool, optional): The parameter attribute for Parameter `scale`
             of batch_norm. If it is set to None or one attribute of paddle.ParamAttr, batch_norm
-            will create paddle.ParamAttr as weight_attr. If it is set to Fasle, the weight is not learnable.
+            will create paddle.ParamAttr as weight_attr. If it is set to False, the weight is not learnable.
             If the Initializer of the weight_attr is not set, the parameter is initialized with Xavier. Default: None.
         bias_attr(ParamAttr|bool, optional): The parameter attribute for the bias of batch_norm.
             If it is set to None or one attribute of paddle.ParamAttr, batch_norm
-            will create paddle.ParamAttr as bias_attr. If it is set to Fasle, the weight is not learnable.
+            will create paddle.ParamAttr as bias_attr. If it is set to False, the weight is not learnable.
             If the Initializer of the bias_attr is not set, the bias is initialized zero. Default: None.
         data_format(str, optional): Specify the input data format, the data format can be "NCHW" or "NHWC". Default: NCHW.
         name(str, optional): Name for the BatchNorm, default is None. For more information, please refer to :ref:`api_guide_Name`..
@@ -1178,11 +1178,11 @@ class SuperInstanceNorm2D(paddle.nn.InstanceNorm2D):
         momentum(float, optional): The value used for the moving_mean and moving_var computation. Default: 0.9.
         weight_attr(ParamAttr|bool, optional): The parameter attribute for Parameter `scale`
             of batch_norm. If it is set to None or one attribute of paddle.ParamAttr, batch_norm
-            will create paddle.ParamAttr as weight_attr. If it is set to Fasle, the weight is not learnable.
+            will create paddle.ParamAttr as weight_attr. If it is set to False, the weight is not learnable.
             If the Initializer of the weight_attr is not set, the parameter is initialized with Xavier. Default: None.
         bias_attr(ParamAttr|bool, optional): The parameter attribute for the bias of batch_norm.
             If it is set to None or one attribute of paddle.ParamAttr, batch_norm
-            will create paddle.ParamAttr as bias_attr. If it is set to Fasle, the weight is not learnable.
+            will create paddle.ParamAttr as bias_attr. If it is set to False, the weight is not learnable.
             If the Initializer of the bias_attr is not set, the bias is initialized zero. Default: None.
         data_format(str, optional): Specify the input data format, the data format can be "NCHW" or "NHWC". Default: NCHW.
         name(str, optional): Name for the BatchNorm, default is None. For more information, please refer to :ref:`api_guide_Name`..
@@ -1298,8 +1298,8 @@ class SuperLayerNorm(paddle.nn.LayerNorm):
         self.cur_config = {'prune_dim': feature_dim}
 
         if paddle.in_dynamic_mode():
-            out, _, _ = paddle._C_ops.layer_norm(
-                input, weight, bias, self._epsilon, begin_norm_axis, False)
+            out = paddle._C_ops.layer_norm(input, weight, bias, self._epsilon,
+                                           begin_norm_axis, False)
         else:
             paddle.common_ops_import.check_variable_and_dtype(
                 input, 'input', ['float32', 'float64'], 'LayerNorm')
