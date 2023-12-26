@@ -36,11 +36,11 @@ RunConfig = namedtuple(
         'train_batch_size',
         # list, the number of epoch of every task in training, default: None
         'n_epochs',
-        # list, initial learning rate of every task in traning, NOT used now. Default: None.
+        # list, initial learning rate of every task in training, NOT used now. Default: None.
         'init_learning_rate',
         # int, total images of train dataset, used to get current epoch, default: None
         'total_images',
-        # list, elactic depth of the model in training, default: None
+        # list, elastic depth of the model in training, default: None
         'elastic_depth',
         # list, the number of sub-network to train per mini-batch data, used to get current epoch, default: None
         'dynamic_batch_size',
@@ -144,7 +144,7 @@ class OFA(OFABase):
     Parameters:
         model(paddle.nn.Layer): instance of model.
         run_config(paddleslim.ofa.RunConfig, optional): config in ofa training, can reference `<>`_ . Default: None.
-        distill_config(paddleslim.ofa.DistillConfig, optional): config of distilltion in ofa training, can reference `<>`_. Default: None.
+        distill_config(paddleslim.ofa.DistillConfig, optional): config of distillation in ofa training, can reference `<>`_. Default: None.
         elastic_order(list, optional): define the training order, if it set to None, use the default order in the paper. Default: None.
         train_full(bool, optional): whether to train the largest sub-network only. Default: False.
     Examples:
@@ -197,7 +197,7 @@ class OFA(OFABase):
 
         if self.elastic_order is None:
             self.elastic_order = []
-            # zero, elastic resulotion, write in demo
+            # zero, elastic resolution, write in demo
             # first, elastic kernel size
             if 'kernel_size' in self._elastic_task:
                 self.elastic_order.append('kernel_size')
@@ -431,8 +431,8 @@ class OFA(OFABase):
         """
         set task in the ofa training progress.
         Parameters:
-            task(list(str)|str): spectial task in training progress.
-            phase(int, optional): the search space is gradually increased, use this parameter to spectial the phase in current task, if set to None, means use the whole search space in training progress. Default: None.
+            task(list(str)|str): special task in training progress.
+            phase(int, optional): the search space is gradually increased, use this parameter to special the phase in current task, if set to None, means use the whole search space in training progress. Default: None.
         Examples:
             .. code-block:: python
               ofa_model.set_task('width')
@@ -445,7 +445,7 @@ class OFA(OFABase):
         """
         set epoch in the ofa training progress.
         Parameters:
-            epoch(int): spectial epoch in training progress.
+            epoch(int): special epoch in training progress.
         Examples:
             .. code-block:: python
               ofa_model.set_epoch(3)
@@ -521,7 +521,7 @@ class OFA(OFABase):
             if getattr(sublayer, 'cur_config', None) == None:
                 continue
 
-            assert 'prune_dim' in sublayer.cur_config, 'The laycer {} do not have prune_dim in cur_config.'.format(
+            assert 'prune_dim' in sublayer.cur_config, 'The layer {} do not have prune_dim in cur_config.'.format(
                 l_name)
             prune_shape = sublayer.cur_config['prune_dim']
             if 'prune_group' in sublayer.cur_config:

@@ -34,9 +34,9 @@ class MedianStop(EarlyStopBase):
     """
     Median Stop, reference:
     Args:
-        strategy<class instance>: the stategy of search.
+        strategy<class instance>: the strategy of search.
         start_epoch<int>: which step to start early stop algorithm.
-        mode<str>: bigger is better or smaller is better, chooice in ['maxmize', 'minimize']. Default: maxmize.
+        mode<str>: bigger is better or smaller is better, choice in ['maxmize', 'minimize']. Default: maxmize.
     """
 
     def __init__(self, strategy, start_epoch, mode='maxmize'):

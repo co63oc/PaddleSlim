@@ -808,7 +808,7 @@ class SuperLinear(paddle.nn.Linear):
     Parameters:
         in_features (int): The number of input units.
         out_features (int): The number of output units.
-        candidate_config(dict, optional): Dictionary descripts candidate config of this layer,
+        candidate_config(dict, optional): Dictionary describes candidate config of this layer,
             such as {'channel': (4, 6, 8)}, the key of candidate_config
             only can be 'channel' and 'expand_ratio', 'channel' and 'expand_ratio'
             CANNOT be set at the same time. Default: None.
@@ -828,8 +828,8 @@ class SuperLinear(paddle.nn.Linear):
         **weight** (Parameter): the learnable weight of this layer.
         **bias** (Parameter): the learnable bias of this layer.
     Shape:
-        - input: Multi-dimentional tensor with shape :math:`[batch\\_size, *, in\\_features]` .
-        - output: Multi-dimentional tensor with shape :math:`[batch\\_size, *, out\\_features]` .
+        - input: Multi-dimensional tensor with shape :math:`[batch\\_size, *, in\\_features]` .
+        - output: Multi-dimensional tensor with shape :math:`[batch\\_size, *, out\\_features]` .
     Examples:
         .. code-block:: python
           import numpy as np
