@@ -16,7 +16,7 @@ QuantAware:
     activation_bits: 8                            # 激活量化比特数
     weight_bits: 8                                # 权重量化比特数
     activation_quantize_type: 'moving_average_abs_max'     # 激活量化方式 [保持默认即可]
-    not_quant_pattern: [skip_quant]               # 跳过量化层的name_scpoe命名  [保持默认即可]
+    not_quant_pattern: [skip_quant]               # 跳过量化层的name_scope命名  [保持默认即可]
     dtype: 'int8'                                 # 量化后的参数类型，默认 int8 , 目前仅支持 int8  [保持默认即可]
     window_size: 10000                            # 'range_abs_max' 量化方式的 window size ，默认10000。  [保持默认即可]
     moving_rate: 0.9                              # 'moving_average_abs_max' 量化方式的衰减系数，默认 0.9。  [保持默认即可]

@@ -61,7 +61,7 @@ python test.py --model_path 'PointNet.pdparams'
 - 测试 BiPointNet
 ```shell
 export CUDA_VISIBLE_DEVICES=0
-python train.py --model_path 'BiPointNet.pdparams' --binary
+python test.py --model_path 'BiPointNet.pdparams' --binary
 ```
 
 ## 致谢
