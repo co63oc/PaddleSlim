@@ -1,16 +1,19 @@
 # 自然语言处理模型自动压缩示例
 
 目录：
-- [1. 简介](#1简介)
-- [2. Benchmark](#2Benchmark)
-- [3. 自动压缩流程](#自动压缩流程)
-  - [3.1 准备环境](#31-准备准备)
-  - [3.2 准备数据集](#32-准备数据集)
-  - [3.3 准备预测模型](#33-准备预测模型)
-  - [3.4 自动压缩并产出模型](#34-自动压缩并产出模型)
-- [4. 压缩配置介绍](#4压缩配置介绍)
-- [5. 预测部署](#5预测部署)
-- [6. FAQ](6FAQ)
+- [自然语言处理模型自动压缩示例](#自然语言处理模型自动压缩示例)
+  - [1. 简介](#1-简介)
+  - [2. Benchmark](#2-benchmark)
+  - [3. 自动压缩流程](#3-自动压缩流程)
+      - [3.1 准备环境](#31-准备环境)
+      - [3.2 准备数据集](#32-准备数据集)
+      - [3.3 准备预测模型](#33-准备预测模型)
+        - [直接下载已微调模型](#直接下载已微调模型)
+        - [重新微调模型](#重新微调模型)
+      - [3.4 自动压缩并产出模型](#34-自动压缩并产出模型)
+  - [4. 压缩配置介绍](#4-压缩配置介绍)
+  - [5. 预测部署](#5-预测部署)
+  - [6. FAQ](#6-faq)
 
 
 ## 1. 简介
@@ -223,6 +226,9 @@ QuantPost:
 ```shell
 wget https://bj.bcebos.com/v1/paddle-slim-models/act/save_ppminilm_afqmc_new_calib.tar
 tar -xf save_ppminilm_afqmc_new_calib.tar
+
+wget https://bj.bcebos.com/v1/paddle-slim-models/act/save_ernie3_afqmc_new_cablib.tar
+tar -xf save_ernie3_afqmc_new_cablib.tar
 ```
 
 ```shell
