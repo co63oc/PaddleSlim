@@ -28,7 +28,7 @@ global_idx = 0
 
 ### start to create trainable program with head mask
 def _feed_op_num(program):
-    """ Get the numeber of feed op """
+    """ Get the number of feed op """
     num = 0
     for block in program.blocks:
         ops = list(block.ops)

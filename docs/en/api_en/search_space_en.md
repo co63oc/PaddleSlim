@@ -56,8 +56,8 @@ import numpy as np
 ### define a search space class inherit the base class SearchSpaceBase
 class ResNetBlockSpace2(SearchSpaceBase):
     def __init__(self, input_size, output_size, block_num, block_mask):
-        ### define the iterm you want to search, such as the numeber of channel, the number of convolution repeat, the size of kernel.
-        ### self.filter_num represents the search list about the numeber of channel.
+        ### define the iterm you want to search, such as the number of channel, the number of convolution repeat, the size of kernel.
+        ### self.filter_num represents the search list about the number of channel.
         self.filter_num = np.array([8, 16, 32, 40, 64, 128, 256, 512])
 
     ### define initial tokens, the length of initial tokens according to block_num or block_mask.

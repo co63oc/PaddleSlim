@@ -38,7 +38,7 @@ class InceptionABlockSpace(SearchSpaceBase):
             self.downsample_num = compute_downsample_num(self.input_size,
                                                          self.output_size)
         if self.block_num != None:
-            assert self.downsample_num <= self.block_num, 'downsample numeber must be LESS THAN OR EQUAL TO block_num, but NOW: downsample numeber is {}, block_num is {}'.format(
+            assert self.downsample_num <= self.block_num, 'downsample number must be LESS THAN OR EQUAL TO block_num, but NOW: downsample number is {}, block_num is {}'.format(
                 self.downsample_num, self.block_num)
 
         ### self.filter_num means filter nums
